@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
+        .add-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+        .edit-btn {
+            background-color: #ffc107;
+            color: black;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+	 
+    <table>
+     <h1>Student List</h1>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+			<th>Actions</th>
+        </tr>
+        <tbody>
+            <tr th:each="student:${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.fName}"></td>
+                <td th:text="${student.lName}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.phone}"></td>
+                <td th:text="${student.address}"></td>
+				<td>
+					<a class="edit-btn" th:href="@{/edit-student(id=${student.id})}">Edit</a>
+					<a class="delete-btn" th:href="@{/delete-student(id=${student.id})}">Delete</a>
+				</td>	
+            </tr>
+        </tbody>
+    </table>
+    <a class="add-btn" th:href="@{/add-student}">Add Student</a>
+</body>
+
+</html>

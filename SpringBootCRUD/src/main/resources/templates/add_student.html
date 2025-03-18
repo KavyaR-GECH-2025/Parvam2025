@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CRUD</title>
+	<style>
+	body{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	}
+	</style>
+
+</head>
+
+<body>
+	<h1>Welcome to Student Page</h1>
+	<form th:action="@{/add-student}" method="post" th:object ="${studentDTO}">
+		<label for="">First Name</label>
+		<input type="text"  placeholder="Enter you first name" th:field ="*{fName}"><br><br>
+		<label for="">Last Name</label>
+		<input type="text" placeholder="Enter you last name" th:field ="*{lName}"><br><br>
+		<label for="">Email Address</label>
+		<input type="email" placeholder="Enter you email address" th:field ="*{email}"><br><br>
+		<label for="">Phone number</label>
+		<input type="number" placeholder="Enter you phone Number" th:field ="*{phone}"><br><br>
+		<label for=""> Address</label>
+		<input type="text"  placeholder="Enter you  address" th:field ="*{address}"><br><br>
+		<input type="submit" value="Add Students">
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container shadow-lg p-3 my-3 rounded-5">
+        <div class="row justify-content-center">
+            <h1 class="text-center">Registration Form</h1>
+            <div class="col-12 col-sm-8 col-lg-6">
+                <form id="registrationform">
+                    <!-- Name field -->
+                    <div class="mb-3">
+                        <label for="text">Name</label><br>
+                        <input type="text" class="form-control" placeholder="Enter your name" id="name">
+                        <div id="nameError" class="text-danger"></div> <!-- Error message for name -->
+                    </div>
+
+                    <!-- Email field -->
+                    <div class="mb-3">
+                        <label for="email">Email</label><br>
+                        <input type="email" class="form-control" placeholder="Enter your email" id="email">
+                        <div id="emailError" class="text-danger"></div> <!-- Error message for email -->
+                    </div>
+
+                    <!-- Password field -->
+                    <div class="mb-3">
+                        <label for="password">Password</label><br>
+                        <input type="password" class="form-control" placeholder="Enter your password" id="password">
+                        <div id="passwordError" class="text-danger"></div> <!-- Error message for password -->
+                    </div>
+
+                    <!-- Confirm Password field -->
+                    <div class="mb-3">
+                        <label for="password">Confirm Password</label><br>
+                        <input type="password" class="form-control" placeholder="Confirm your password" id="cpassword">
+                        <div id="cpasswordError" class="text-danger"></div> <!-- Error message for confirm password -->
+                    </div>
+
+                    <!-- Address field -->
+                    <div class="mb-3">
+                        <label for="address">Address</label><br>
+                        <textarea class="form-control" placeholder="Enter your address" id="address"></textarea>
+                        <div id="addressError" class="text-danger"></div> <!-- Error message for address -->
+                    </div>
+
+                    <!-- Pincode field -->
+                    <div class="mb-3">
+                        <label for="number">Pincode</label><br>
+                        <input type="number" class="form-control" placeholder="Enter your pincode" id="pincode">
+                        <div id="pincodeError" class="text-danger"></div> <!-- Error message for pincode -->
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const registrationform = document.querySelector("#registrationform");
+
+            registrationform.addEventListener("submit", (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const showError = (eleId, text) => {
+                    document.getElementById(eleId).textContent = text;
+                }
+
+                const clearError = (eleId) => {
+                    document.getElementById(eleId).textContent = "";
+                }
+
+                const formValid = () => {
+                    let isValid = true;
+
+                    // Collect form values
+                    const name = document.querySelector("#name").value.trim();
+                    const email = document.querySelector("#email").value.trim();
+                    const password = document.querySelector("#password").value;
+                    const cpassword = document.querySelector("#cpassword").value;
+                    const address = document.querySelector("#address").value.trim();
+                    const pincode = document.querySelector("#pincode").value.trim();
+
+                    // Validation checks
+                    if (name === "") {
+                        showError("nameError", "Name field is required.");
+                        isValid = false;
+                    } else if (name.length < 3) {
+                        showError("nameError", "Name must contain at least 3 characters.");
+                        isValid = false;
+                    } else {
+                        clearError("nameError");
+                    }
+
+                    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+                    if (email === "") {
+                        showError("emailError", "Email is required.");
+                        isValid = false;
+                    } else if (!emailPattern.test(email)) {
+                        showError("emailError", "Please enter a valid email address.");
+                        isValid = false;
+                    } else {
+                        clearError("emailError");
+                    }
+
+                    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$%!?&])[A-Za-z\d@$%!?&]{8,}$/;
+                    
+                    if (password === "") {
+                        showError("passwordError", "Password is required.");
+                        isValid = false;
+                    } else if (!passwordPattern.test(password)) {
+                        showError("passwordError", "Password must contain at least one lowercase letter, one uppercase letter, and one special character (@$%!?&) with a minimum length of 8 characters.");
+                        isValid = false;
+                    } else if (password !== cpassword) {
+                        showError("cpasswordError", "Passwords do not match.");
+                        isValid = false;
+                    } else {
+                        clearError("passwordError");
+                        clearError("cpasswordError");
+                    }
+
+                    if (address === "") {
+                        showError("addressError", "Address is required.");
+                        isValid = false;
+                    } else {
+                        clearError("addressError");
+                    }
+
+                    const pincodePattern = /^\d{6}$/;
+                    if (pincode === "") {
+                        showError("pincodeError", "Pincode is required.");
+                        isValid = false;
+                    } else if (!pincodePattern.test(pincode)) {  
+                        showError("pincodeError", "Pincode must contain exactly 6 digits.");
+                        isValid = false;
+                    } else {
+                        clearError("pincodeError");
+                    }
+
+
+                    return isValid;
+                }
+
+                // If form is valid, show success message
+                if (formValid()) {
+                    alert("Form submitted successfully");
+                    registrationform.submit(); // Submit the form (if valid)
+                }
+            });
+        });
+    </script>
+</body>
+</html>
