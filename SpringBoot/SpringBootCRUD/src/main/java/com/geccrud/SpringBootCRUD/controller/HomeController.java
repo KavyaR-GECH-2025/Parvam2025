@@ -13,8 +13,6 @@ import com.geccrud.SpringBootCRUD.models.Student;
 import com.geccrud.SpringBootCRUD.service.StudentService;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @Controller
 public class HomeController {
 	
