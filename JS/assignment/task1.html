@@ -1,0 +1,30 @@
+<!-- create an object representing a student with properties name, age, marks, write a function that increase the marks by 10% in javascipt -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name: "Kavay",
+            age: 23,
+            marks: 80,
+            increaseMarks: function() {
+                this.marks += 10; // Increase marks by 10%
+            } 
+        };
+        
+        
+        console.log(student.name);
+        console.log(student.age);
+        student.increaseMarks();
+        console.log(student.marks);
+    </script>   
+
+    
+</body>
+</html>
