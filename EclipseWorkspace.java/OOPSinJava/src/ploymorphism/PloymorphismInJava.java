@@ -1,6 +1,8 @@
 package ploymorphism;
 
-// 1. method-overriding
+// static method we cannot override but we can overload
+//final method we cannot override but we can overload
+// 1. method-overriding : A subclass provides a new implementation for a method already defined in the parent class.
 class Person{
 	static void walking() {
 		System.out.println("The person is walking");
@@ -15,7 +17,7 @@ class Kavya extends Person{
 	
 }
 
-// 2. method-overloading
+// 2. method-overloading :Multiple methods with the same name but different parameters in the same class.
 
 class Addition{
 	static void add(int a,int b) {

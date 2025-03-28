@@ -1,7 +1,7 @@
 package encapsulation;
 
 class Student{
-	private String name;
+	private String name; // hiding data
 	private int age;
 	private double marks;
 	
@@ -32,6 +32,7 @@ public class EncapsulationInJava {
 		 * Encapsulation:
 		 * =============
 		 * Encapsulation is a mechanism that binding the data into a single 
+		 * Encapsulation is the process of hiding data within a class and only allowing access through getter and setter methods
 		 */
 		Student std1 = new Student();
 		std1.setName("Kavya");

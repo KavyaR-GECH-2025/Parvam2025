@@ -1,6 +1,11 @@
 package abstraction;
 
+//instance - object
+// we cannot create object for abstrat class because it conatin abstract method
+// we can create object for finall class but we cannot extends the class
+
 //1.interface
+
 
 interface Animal{
 	public void eat();

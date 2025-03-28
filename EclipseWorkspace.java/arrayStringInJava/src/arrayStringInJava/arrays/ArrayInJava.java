@@ -45,6 +45,17 @@ public class ArrayInJava {
 	}
 }
 
+/*
+ * Drawbacks of array
+ * 1.we cannot change array size once we declare.
+ * 2.we store same datatype
+ * 3.we cannot shrink the array
+ * 
+ * 
+ * Advantage:
+ * 1.random aceess
+ * 2. type safety and type casting
+ */
 
 
 

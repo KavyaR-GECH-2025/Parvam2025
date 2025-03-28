@@ -6,7 +6,7 @@ class Student{
 	public String name = "Kavya";
 	public double marks = 300.50;
 	
-	//actons
+	//actions
 	public void isPlaying() {
 		System.out.println(this.name+ " is Playing");
 	}

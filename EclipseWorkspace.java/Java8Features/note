@@ -1,0 +1,505 @@
+
+
+#12-03-2025 : DJANGO FRAMEWORK
+
+>> python --version : To check the version of the python
+>> python -m venv my_venv : To create a virtual environment
+>> my_venv\scripts\activate : To activate the virtual environment
+>> pip freeze : To check the already installed packages
+>> pip install Django : To install the Django
+>> django-admin --version : To check the Django admin version
+>> django-admin startproject gec_my : To create a project
+>> cd gec_my : To change directory
+>> dir : To see the directory
+>> python manage.py startapp stu_my : To create app in project
+>> python manage.py runserver : To run the server
+>> python manage.py makemigrations : To check changes in models
+>> python manage.py migrate : To confirm the changes happend in models
+>> python manage.py createsuperuser : To create a user
+
+
+14-02-2025 : JAVA
+
+Error : 
+-> Right click on src file and select build path next select configure build path go to libraries and select JRe system library and click on edit and select alertive jde - jdk21 and click finish and apply&close.
+
+
+package gec_java;
+
+public class App {
+	public static void main(String [] args) {
+		//variables
+		//synatx - <acess specfier - optional> <data type> variable_name;
+		int a = 30;
+		System.out.println("Hello");
+		System.out.println(a);
+		
+		//objects - its a real world entity (it is exist in real world)
+		//example - student,table,laptop
+		
+		// object - conatins 3 thins
+		/*
+		 * 1.state
+		 * 2.beh
+		 * 3.identity - unique
+		 */
+		/*
+		 * example : student
+		 * 40 students
+		 * identity - stdid or roll
+		 * state - name,height,weight
+		 * behaviour(action) - cansing(), canplay()
+		 */
+		
+		//class - it a blueprint of the object
+		/*
+		 * class - will represent the state and behaviour of an object
+		 * class class_name{
+		 *      //state  <acess - specfier> <data type> state_name;
+		 *      //beha   <acess - specfier> <return type> beha_name;
+		 *      //identity
+		 * }      
+		 */
+
+
+/* constructor - it is special type of method this will used to assign the values for instances variables/state.
+		 * rules:
+		 * -----
+		 * 1. name of constructor should same as the class name.
+		 * 2. constructor will not have a return type.
+		 * 3. constructor will assign to instance variables using this keyboard.
+		 * 
+		 * syntax:
+		 * -----
+		 * <access specifier - public> class_name(values from object){
+		 *        //code to assign values
+		 *  }
+		 */
+
+ /*
+          * 3 - access specifiers / modifier
+          *     1. public - we can access anywhere.
+          *     2. private - we can in side the class only
+          *     3. protected - we can acess within the package
+          */
+		
+
+SPRING BOOT :
+
+Spring boot is extension version of the spring. It works based on MVC(Model, View, Controller) architecture.
+Model - Tables
+View - Templates
+Controller - Logic
+
+DTO - Data Transfer Object
+
+5 Packages
+-> DTO
+-. Controller
+-> Service
+-> Repository
+-> Model
+
+Spring Intailizer : https://start.spring.io/index.html
+Dependencies:
+
+1.Spring Web (Web)
+    --> Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+
+2.MySQL Driver (SQL)
+    --> MySQL JDBC driver.
+
+3.Spring Data JPA (SQL)
+    --> Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+
+4.Thymeleaf (Template Engines)
+    --> A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.
+
+5.Lombok (Developer Tools)
+    --> Java annotation library which helps to reduce boilerplate code.
+
+6.Validation (I/O)
+   --> Bean Validation with Hibernate validator.
+
+7.Spring Boot DevTools (Developer Tools)
+    --> Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+
+
+#17-03-2025
+
+-->HomeContoller.java
+
+import java.util.List;
+
+@Controller
+public class HoneController{
+    private final StudentService studentService;
+
+    public HoneController(StudentService studentService){
+         super();
+
+
+
+
+
+--> student.html
+
+<body>
+   <table>
+       <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+      </tr>
+      <tbody>
+            <tr th:each = "student:${student}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.fName}"></td>
+		<td th:text="${student.lName}"></td>
+		<td th:text="${student.email}"></td>
+		<td th:text="${student.Phone}"></td>
+		<td th:text="${student.address}"></td>
+	    </tr>
+     </tbody>
+
+
+
+
+#19-03-2025    : CORE Java
+
+Basic of Java :
+  Develpoed by James GOSLING  in 1995
+
+LONG TERM SUPPORT - LTS
+JAVA DEVELOPMENT KIT - JDK
+JAVA RUNTIME ENVIRONMENT - JRE
+JAVA VIRTUAL MACHINE - JVM
+
+2 Edition
+Java Enterprise Edition    (WEB) 
+Java Standard Edition 
+
+Data Types in Java
+1. Primitive datatypes
+2. Non-Primitive datatypes
+
+1.Primitive Datatypes
+-->byte = 23 (8 bit, range between -128 to 127)    ---> default 0
+-->short = 300 (16 bit, range between -128 to 127) --> default 0
+-->int = 3000  --> default 0
+
+-->long = 300L
+-->float = 8.9f
+-->char = 'a'
+-->Boolean = true
+
+DECLRATION OF VARIABLE:
+Syntax : <datatype> variable_name;
+variable - it is container used to share a values based on the data type.
+
+INITAILIZATION OF VARIABLE:
+Syntax : variable_name = value;
+
+
+2.Non-Primitive Datatype
+    -->Array   SYNTAX : <DATATYPE>[] VARIABLE_NAEM = {VALUE};   EXAMPLE : int[] array ={1,2,3,4};
+
+    -->String  SYNTAX : <DATATYPE> VARIABLE_NAEM = "VALUE";   EXAMPLE : String name = "Kavya";
+
+
+OPERATOR IN JAVA
+
+1.arithmetic : - + * / %
+2.unary : ++ --
+3.assigment : = += -= *= /= %=
+4.relational : < > <= >= != ==  true or false
+5.logical : && || !  true or false
+6.ternary : ? :
+7.bitwise : & | 
+8.shift : >> <<
+9.instace of operator : instaceOf
+
+
+CONTROL STATEMENT:
+		/*
+		 * if, if else, else if and switch statement
+		 * 
+		 * if(condition){
+		 * 
+		 * }
+		 * 
+		 * if(condition){
+		 * 
+		 * }
+		 * else{
+		 * 
+		 * }
+		 * 
+		 * if(condtion){
+		 * 
+		 * }
+		 * else if(ondition){
+		 * 
+		 * }
+		 * else{
+		 * 
+		 * }
+		 */
+
+LOOPING STATEMENTS
+
+1. for loop
+2. while loop
+3. do-while loop
+4. for each loop
+
+
+VAR : it use to store different datatypes in single datatype.
+
+#20-03-25  
+     
+Access Modifiers:
+
+public --> we can use this anywhere  
+private --> within same class
+default --> within same package
+protected --> within same package but subclass of different package
+
+#21-03-2025
+INTERFACE
+   -->interface is blueprint of the class
+   --> it used to create multiple interface and access one method multiple time.
+  /*
+   * Interface:
+			 * =========
+			 * It is blue print of class.
+			 * The methods in the interface by default abstract(does not contain any body).
+			 * From java 8 we can write default and static methods in interface.
+			 * 
+			 * how to declare interface
+			 * =======================
+			 * interface interface_name{
+			 *      code
+			 *  }
+			 *  
+			 *  ex:
+			 *     interface Animal{ 
+			 *         public void makeSound();
+			 *      }  
+			 *      
+			 */
+
+		
+#24-03-2025
+
+		/*
+		 * Concrete:
+		 * ========
+		 * 
+		 * concrete method:
+		 * ================
+		 * the method contains full implementation/body
+		 * 
+		 * 
+		 * non-concrete method:
+		 * =======================
+		 * the method doesn't contain implementation/body
+		 * 
+		 * concrete class:
+		 * ===============
+		 * the class contain full implementation /body method
+		 */
+
+
+IMPORTANT :
+diff b/w interface, pojo, concrete, abstract    (interview)
+
+	/*
+		 * Exception in Java:
+		 * =================
+		 * there is a unwanted or unexpected event occur in the program.
+		 * when ever there is exception the normal flow will stop.
+		 * 
+		 * 2 Types:
+		 * ===========
+		 * 1. checked exception(compile time) -> FileNotFoundException   ---> 1. I/O Exception, 2. ClassNotFound Exception, 3. SQL Exception
+		 * 2. unchecked exception(runtime) ->arrayIndexOutBoundException ---> 1. Runtime Exception
+		 * 
+		 * Error:
+		 * ======
+		 * it is a problem where the program cann't handle it ex:StackOverflowError
+		 */
+StackOverflowError:Example
+
+package execptionInJava_JAVA;
+
+public class ExecptionInJava {
+
+public static void display() {
+    display();
+
+}
+public static void main(String[] args) {
+
+ExecptionInJava.display();
+
+	}
+
+}
+
+
+#27-03-2025
+
+JAVA 8 FEATURES:
+===============
+1.lambda expressions
+2.functional interface
+3.predicate
+4.consumer
+5.suplier
+6.function
+7.stream API
+
+1.LAMBDA EXPRESSIONS:
+======================
+* it also called anonymous function (without name).
+* there is return type.
+* there is no access modifiers.
+
+Example 1:
+	public int add(int a, int b){                   // normal way
+		return a+b;
+	}
+	
+	(int a, int b)->{                             // lambda expressions
+		return a+b:
+	}
+
+Example 2:
+	public String findLength(String s){
+		return s.length();
+	}
+
+	(String s) -> {return s.length()}
+
+Example 3:
+	public void print(){
+		syso("hello world");
+	}
+
+	() ->{syso("hello world")}
+
+
+Important Points in lambda expressions:
+======================================
+1. no need to specify the type of the data.
+   (a,b) -> {
+	return a+b;
+    }
+
+2. if the statement is single line then not require of {} and return.
+   (s) -> s.lenght()
+
+3. if you are passing the single parameter then no need to ().
+   s -> s.length()
+
+4. if there is no parameter then () is must.
+   () -> {syso("hello world")}
+
+5. if there is a multiple parameter then it need to separate by ,
+   (a,b) -> a+b
+
+
+
+2.FUNCTIONAL INTERFACE:
+========================
+* Interface contain only one abstract method.
+  ex: comparator
+* @FunctionalInterface -> functional interface
+
+
+
+PREDEFINED FUNCTIONAL INTERFACES
+-----------------------------------
+
+ 3.PREDICATE:
+ =============
+ *it will holds a condition
+ *predicate has one method called test which takes only one parameter and returns the output values as  boolean 
+ 
+ example:
+ //to find the number is even or odd
+	Predicate<Integer> p = (a) -> a % 2 == 0;	
+	System.out.println(p.test(21));
+	
+	
+	
+4.CONSUMER:
+===========
+*it will consume value but won't return anything
+*accept() --> to consume any value by user it has method 
+
+example:
+Consumer<String> c = (s)-> System.out.println(s);
+c.accept("Suchithra");
+
+
+ 
+ 5.SUPPLIER:
+ ============
+ *it won't take anything but it will returns the value
+ *Supplier has one method--> get()
+ 
+ 
+ 
+ 
+ 6.FUNCTION :
+=============
+* it will take one parameter and perform action and return value
+* apply() -> method to take parameter
+* Syntax:
+* -------
+* Function<T, R>
+*-->Here T is data type for which we perform action
+* -->And R is return type
+
+
+
+7.STREAM API:
+============
+Collection : To represent a group of individual objects as single entity then we should go for collection.
+Streams : To work with multiple objects or collection then should go for steams.
+
+
+3 Conditions:
+==============
+1.source :
+  on which you are applying the stream
+  
+2.intermediate operation:
+  the operation will return the another stream
+  
+3.termination operation:
+  * it will terminate the stream.
+  * after applying the termination operation on streams we cann't reuse it.
+  * for each stream we can use only one termination operation.
+  
+  example:
+  ---------
+  List<Integer> list = new ArrayList<>();
+  list.add(21);
+  list.add(12);
+  list.stream().filter(x -> x%2 == 0).count();
+  
+  
+   
+
+
+
+
+
+
+
